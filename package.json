@@ -1,0 +1,26 @@
+{
+  "name": "my-storybook-react",
+  "version": "1.0.0",
+  "main": "dist/index.js",
+  "repository": "https://github.com/gabrieloureiro/my-storybook-react.git",
+  "author": "Gabriel Loureiro <gabrieloureirof@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "storybook": "start-storybook"
+  },
+  "dependencies": {
+    "styled-components": "^5.1.1"
+  },
+  "devDependencies": {
+    "@storybook/addon-centered": "^5.3.21",
+    "@storybook/addon-info": "^5.3.21",
+    "@storybook/react": "^6.0.21",
+    "@types/react": "^16.9.49",
+    "@types/styled-components": "^5.1.2",
+    "babel-loader": "^8.1.0",
+    "react": "^16.13.1",
+    "react-docgen-typescript-loader": "^3.7.2",
+    "ts-loader": "^8.0.3",
+    "typescript": "^4.0.2"
+  }
+}
