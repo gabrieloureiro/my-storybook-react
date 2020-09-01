@@ -7,18 +7,15 @@ interface LayoutProps extends HTMLAttributes<HTMLDivElement> {
 
 const Layout = styled.section<LayoutProps>`
   display: flex;
-  flex-direction: ${(props) => (props.hasSider ? "row" : "column")};
+  flex-direction: ${(props) => (props.hasSider ? "column" : "row")};
   flex: auto;
   min-height: 0;
-  max-height: 100vh;
+  max-height: 100%;
   overflow-y: auto;
   overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
   scroll-behavior: smooth;
+  background: #fff;
 `;
-
-// const Layout: React.FC<LayoutProps> = ({ hasSider, children }) => {
-//   return <StyledLayout hasSider={hasSider}>{children}</StyledLayout>;
-// };
 
 export default Layout;

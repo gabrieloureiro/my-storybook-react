@@ -5,4 +5,7 @@ import centered from "@storybook/addon-centered/react";
 import "./reset.css";
 
 addDecorator(withInfo);
-addDecorator(centered);
+
+export const parameters = {
+  layout: "fullscreen",
+};

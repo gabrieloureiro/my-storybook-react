@@ -6,4 +6,6 @@ export default {
   component: Container,
 };
 
-export const Default = () => <Container>Default</Container>;
+export const Default = () => (
+  <Container>DIGHIOSHNJGDOASIGSIOHFOSIDGOI</Container>
+);
