@@ -22,11 +22,11 @@ const StyledTitle = styled.h2`
   text-transform: uppercase;
 `;
 
-const Header: React.FC<HeaderProps> = ({ handleCollpase, children }) => {
+const Header: React.FC<HeaderProps> = ({ handleCollpase }) => {
   return (
     <StyledHeader>
       <FiMenu onClick={handleCollpase} size={40} />
-      <StyledTitle>{children}</StyledTitle>
+      <StyledTitle>KDJANLKSJID</StyledTitle>
     </StyledHeader>
   );
 };

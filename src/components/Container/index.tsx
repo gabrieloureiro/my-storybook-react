@@ -1,10 +1,11 @@
 import React, { useState } from "react";
-import { BrowserRouter, useLocation } from "react-router-dom";
+import { BrowserRouter } from "react-router-dom";
 import Layout from "./Layout";
 import Header from "./Header";
 import Content from "./Content";
 import Sider from "./Sider";
 import { SideLinkProps } from "./SideLink";
+import Routes from "../../routes/Routes";
 
 interface ContainerProps {
   title?: string;
@@ -17,10 +18,12 @@ const Container: React.FC<ContainerProps> = ({ title, links, children }) => {
   return (
     <BrowserRouter>
       <Layout hasSider>
-        <Header handleCollpase={() => setCollapsed(!collapsed)}>{title}</Header>
+        <Header handleCollpase={() => setCollapsed(!collapsed)} />
         <Layout>
           <Sider links={links} collapsed={collapsed} />
-          <Content>{children}</Content>
+          <Content>
+            <Routes>{children}</Routes>
+          </Content>
         </Layout>
       </Layout>
     </BrowserRouter>
