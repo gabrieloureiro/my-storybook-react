@@ -5,32 +5,30 @@ import Header from "./Header";
 import Footer from "./Footer";
 import Content from "./Content";
 import Sider from "./Sider";
-import { FiPieChart, FiUser } from "react-icons/fi";
+import { SideLinkProps } from "./SideLink";
 
-export const Container: React.FC = ({ children }) => {
+interface ContainerProps {
+  title?: string;
+  footer?: string;
+  links: SideLinkProps[];
+}
+
+export const Container: React.FC<ContainerProps> = ({
+  title,
+  footer,
+  links,
+  children,
+}) => {
   const [collapsed, setCollapsed] = useState(false);
-
-  const links = [
-    {
-      path: "/",
-      label: "Dashboard",
-      icon: <FiPieChart />,
-    },
-    {
-      path: "/clients",
-      label: "Clients",
-      icon: <FiUser />,
-    },
-  ];
 
   return (
     <BrowserRouter>
       <Layout hasSider>
-        <Header handleCollpase={() => setCollapsed(!collapsed)} />
-        <Sider links={links} collapsed={collapsed} />
+        <Header handleCollpase={() => setCollapsed(!collapsed)}>{title}</Header>
         <Layout>
+          <Sider links={links} collapsed={collapsed} />
           {children}
-          <Footer />
+          <Footer>{footer}</Footer>
         </Layout>
       </Layout>
     </BrowserRouter>

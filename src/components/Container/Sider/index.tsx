@@ -2,7 +2,7 @@ import React, { HTMLAttributes } from "react";
 import styled from "styled-components";
 import SideLink, { SideLinkProps } from "../SideLink";
 
-interface SiderProps extends HTMLAttributes<HTMLDivElement> {
+export interface SiderProps extends HTMLAttributes<HTMLDivElement> {
   collapsed?: boolean;
   links: SideLinkProps[];
 }
