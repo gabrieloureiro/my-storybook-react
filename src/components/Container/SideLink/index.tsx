@@ -1,12 +1,12 @@
 import React, { HTMLAttributes } from "react";
 import { NavLink } from "react-router-dom";
 import styled from "styled-components";
-import { StyledIcon } from "../Sider";
+import { IconBase } from "react-icons";
 
-interface SideLinkProps {
+export interface SideLinkProps {
   label: string;
-  icon: any;
   path: string;
+  icon: JSX.Element;
 }
 
 const StyledNavLink = styled(NavLink)`
@@ -28,6 +28,10 @@ const StyledNavLink = styled(NavLink)`
 
 export const StyledLinkText = styled.span`
   /* margin-left: 16px; */
+`;
+
+export const StyledIcon = styled(IconBase)`
+  font-size: 32px;
 `;
 
 const SideLink: React.FC<SideLinkProps> = ({ label, icon, path, ...rest }) => {

@@ -1,10 +1,10 @@
 import React, { HTMLAttributes } from "react";
 import styled from "styled-components";
-import SideLink from "../SideLink";
-import { FiPieChart } from "react-icons/fi";
+import SideLink, { SideLinkProps } from "../SideLink";
 
 interface SiderProps extends HTMLAttributes<HTMLDivElement> {
   collapsed?: boolean;
+  links: SideLinkProps[];
 }
 
 const StyledSider = styled.aside<SiderProps>`
@@ -28,15 +28,20 @@ const StyledNav = styled.nav`
   margin-top: 16px;
 `;
 
-const Sider: React.FC<SiderProps> = ({ children, collapsed, ...rest }) => {
+const Sider: React.FC<SiderProps> = ({ links, collapsed, ...rest }) => {
   return (
-    <StyledSider collapsed={collapsed} {...rest}>
+    <StyledSider links={links} collapsed={collapsed} {...rest}>
       <StyledNav>
-        <SideLink
-          path="/"
-          label={!collapsed ? "" : "Dashboard"}
-          icon={<FiPieChart />}
-        />
+        {links?.map((item, index) => {
+          return (
+            <SideLink
+              key={index}
+              path={item.path}
+              label={item.label}
+              icon={item.icon}
+            />
+          );
+        })}
       </StyledNav>
     </StyledSider>
   );
